@@ -7,6 +7,8 @@ import { Page1Component } from './page1/page1.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ListComponent } from './list/list.component';
 import { GroceriesInputComponent } from './groceries-input/groceries-input.component';
+import { FormsModule } from '@angular/forms';
+import { GroceriesService } from './groceries.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { GroceriesInputComponent } from './groceries-input/groceries-input.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [GroceriesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,7 @@
-<p>groceries-input works!</p>
+<div class="container d-flex justify-content-center align-items-center">
+    <form id="loginBox" class="d-flex flex-column p-4 rounded">
+    <h1 class="m-2">Add grocerie item</h1>
+    <input class="my-2" id="item" type="text" placeholder="item" [(ngModel)]='item' name='inputItem'>
+    <button class="my-2 btn" (click)='onItemAdd()'>Add</button>
+    </form>
+    </div>
