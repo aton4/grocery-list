@@ -14,6 +14,12 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.list = this.groceriesService.getGroceryList();
+
+    this.groceriesService.groceriesChanged.subscribe(
+      (itemList: String[]) => {
+        this.list = itemList;
+      }
+    );
   }
 
 }

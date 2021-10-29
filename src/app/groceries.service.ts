@@ -1,9 +1,12 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GroceriesService {
+
+  groceriesChanged = new EventEmitter<String[]>();
+
   private groceryList: String[] = [
     'apples',
     'cookies'
@@ -18,5 +21,7 @@ export class GroceriesService {
   public addItem(item: String) {
     this.groceryList.push(item);
     console.log(this.groceryList.slice())
+
+    this.groceriesChanged.emit(this.groceryList.slice())
   }
 }
